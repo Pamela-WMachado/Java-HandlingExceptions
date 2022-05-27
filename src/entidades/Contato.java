@@ -2,6 +2,8 @@ package entidades;
 
 public class Contato {
 	public String nome;
+	public String email;
+
 
 	public String getNome() {
 		return nome;
@@ -10,5 +12,15 @@ public class Contato {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 
 }
