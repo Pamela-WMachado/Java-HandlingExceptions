@@ -3,14 +3,42 @@ package tratamentoExcecao;
 import javax.swing.JOptionPane;
 
 import entidades.Contato;
+import exceptions.MinhaExcecao;
 
 public class Tratamento {
 	
-	public static void main (String[] args) {
-		TratandoExceçoesGerais();
-		usandoFinallyNoTratamentoDeExceçoes();
+	public static void main (String[] args){
+		//TratandoExceçoesGerais();
+		//usandoFinallyNoTratamentoDeExceçoes();
+		
+		/*try {
+			lancarExcecao();
+		} 
+		catch(Exception e) {
+			System.out.println(e.toString());
+		} */
+		try {
+			excecaoPersonalizada();
+
+		}
+		catch(Exception e) {
+			System.out.println(e.toString());
+		}
 	}
 	
+	private static void excecaoPersonalizada() throws MinhaExcecao{
+		int a = 10;
+		if (a > 3) {
+			throw new MinhaExcecao(a + " é maior que 5");
+		}
+	}
+
+	public static void lancarExcecao() throws Exception {
+		int idade = 16;
+		if (idade < 18) {
+			throw new Exception("Você é menor de idade");
+		}
+	}
 	
 	public static void TratandoExceçoesGerais() {
 		//instanciando classe contato para testar com valor null
